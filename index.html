@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alien game</title>
+</head>
+
+<body>
+
+    <!-- HTML  -->
+    <div class="every">
+        <h1>Alien game</h1>
+        <div class="mothership">
+            <div>1 x Mother Ship <p id="motherpoint"></p>
+            </div>
+        </div>
+        <div class="defenceship">
+            <div>5 x Defence Ship <p id="defencepoint"></p>
+            </div>
+        </div>
+        <div class="attackship">
+            <div>8 x Attack Ship <p id="attackpoint"></p>
+            </div>
+        </div>
+
+        <input type="button" value="hit" onclick="decrease()">
+    </div>
+
+    <!-- CSS  -->
+    <style>
+        .every {
+            display: inline-block;
+            max-width: 200px;
+            text-align: center;
+        }
+
+        .mothership div {
+            border: 1px solid salmon;
+            margin: 10px;
+        }
+
+        .defenceship div {
+            border: 1px solid sandybrown;
+            margin: 10px;
+        }
+
+        .attackship div {
+            border: 1px solid seagreen;
+            margin: 10px;
+        }
+    </style>
+
+<!-- JAVASCRIPT  -->
+    <script>
+        class ship {
+
+            constructor(point) {
+                this.point = point;
+            }
+
+            hitMother() {
+                this.point = this.point - 9;
+                return this.point;
+            }
+
+            hitDefence() {
+                this.point = this.point - 10;
+                return this.point;
+            }
+
+            hitAttack() {
+                this.point = this.point - 12;
+                return this.point;
+            }
+        }
+        // PROPERTIES OF EACH SHIP 
+        const motherShip = new ship(100);
+        const defenceShip = new ship(80);
+        const attackShip = new ship(45);
+        const ships = [motherShip, defenceShip, attackShip];
+
+        // DISPLAY EVERY POINT 
+        const mother = document.getElementById('motherpoint').innerHTML = motherShip.point;
+        const defence = document.getElementById('defencepoint').innerHTML = defenceShip.point;
+        const attack = document.getElementById('attackpoint').innerHTML = attackShip.point;
+
+        // HITTING EACH SHIP AND DISPLAY IT 
+        const attachedMother = document.getElementById('motherpoint').innerHTML = motherShip.hitMother();
+        const attachedDefence = document.getElementById('defencepoint').innerHTML = defenceShip.hitDefence();
+        const attachedAttack = document.getElementById('attackpoint').innerHTML = attackShip.hitAttack();
+        const attached = [attachedMother, attachedDefence, attachedAttack];
+
+        // // HIT EACH SHIP 
+        // const motherHit = motherShip.hitMother();
+        // const defenceHit = defenceShip.hitDefence();
+        // const attackHit = attackShip.hitAttack();
+        // const hitArray = [motherHit, defenceHit, attackHit];
+
+        // CLICK FUNCTION 
+        const decrease = () => {
+            const newScore = attached[Math.floor(Math.random() * attached.length)];
+            return newScore;
+        }
+    </script>
+
+</body>
+
+</html>
