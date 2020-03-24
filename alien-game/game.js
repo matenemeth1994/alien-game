@@ -71,5 +71,5 @@ const resetGame = () => {
 
 updateHtml();
 
-document.querySelector("button").addEventListener("click", dealDamage);
+document.querySelector("#button").addEventListener("click", dealDamage);
 document.querySelector("#buttonTwo").addEventListener("click", resetGame);
