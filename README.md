@@ -12,3 +12,6 @@ Simple "game" using class, for loop and random function.
 1. Clone the repository
 2. Open index.html in live server
 
+### Project Link
+
+`https://aliengame.matenemeth.co.uk/`
