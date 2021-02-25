@@ -20,7 +20,7 @@ class Ship {
     this.hp = 0;
   }
   displayShips() {
-    const printShip = `<p class="${this.id}"> ${this.name} - HP: ${this.hp}</p>`;
+    const printShip = `<p class="${this.id} shadow-sm"><img id="images" src="./img/${this.name}.svg" alt="image"> HP: ${this.hp}</p>`;
     document.getElementById(this.id).innerHTML += printShip;
   }
 }
@@ -29,11 +29,11 @@ const createShips = () => {
   for (let index = 0; index < totalShips; index++) {
     let newShip;
     if (index < numMotherShips) {
-      newShip = new Ship("MotherShip", 100, 9, "motherShip");
+      newShip = new Ship("mother-ship", 100, 9, "motherShip");
     } else if (index <= numAttackShips) {
-      newShip = new Ship("AttackShip", 45, 12, "attackShip");
+      newShip = new Ship("attack-ship", 45, 12, "attackShip");
     } else if (index <= totalShips) {
-      newShip = new Ship("DefenseShip", 80, 10, "defenceShip");
+      newShip = new Ship("defense-ship", 80, 10, "defenceShip");
     }
     ships.push(newShip);
   }
