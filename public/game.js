@@ -62,7 +62,7 @@ const dealDamage = () => {
       let x = document.getElementById("myAlert");
       if (x.style.display == "none") {
         x.style.display = "block";
-      } 
+      }
     }
     myAlert();
   } else if (randomShip.hp <= 0) {

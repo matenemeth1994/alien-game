@@ -7,6 +7,7 @@ Simple "game" using class, for loop and random function.
 * HTML  
 * CSS
 * Javascript
+* Bootstrap
 
 ### How to use 
 1. Clone the repository
