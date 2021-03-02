@@ -1,36 +1,27 @@
-h1, div, p {
+h1,
+div,
+p {
   font-family: 'VT323', monospace;
 }
 
-.motherShip {
-  /* background-color: greenyellow; */
-  /* color: white; */
-  text-align: center;
-}
-
-.defenceShip {
-  /* background-color: teal; */
-  /* color: white; */
-  text-align: center;
-}
-
-.attackShip {
-  /* background-color: tomato; */
-  /* color: white; */
-  text-align: center;
-}
-
 #images {
-  width: 20px;
+  width: 25px;
   padding: 3px;
 }
 
 #header {
-  background-color: #33ff66;
+  background-color: #33ff4e;
 }
 
 #body {
   background-color: #00ff66;
+}
+
+#buttons {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 8%;
 }
 
 #button {
@@ -39,4 +30,18 @@ h1, div, p {
 
 #buttonTwo {
   background-color: #bd9702;
+}
+
+/* Medium devices (landscape tablets, 375px and up) */
+@media only screen and (min-width: 375px) {
+  #body {
+    font-size: 20px;
+  }
+}
+
+/* Large devices (laptops/desktops, 1024px and up) */
+@media only screen and (min-width: 1024px) {
+  #body {
+    font-size: 25px;
+  }
 }

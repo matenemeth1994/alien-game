@@ -29,7 +29,7 @@ const createShips = () => {
   for (let index = 0; index < totalShips; index++) {
     let newShip;
     if (index < numMotherShips) {
-      newShip = new Ship("mother-ship", 100, 9, "motherShip");
+      newShip = new Ship("mother-ship", 100, 15, "motherShip");
     } else if (index <= numAttackShips) {
       newShip = new Ship("attack-ship", 45, 12, "attackShip");
     } else if (index <= totalShips) {
@@ -56,9 +56,15 @@ const dealDamage = () => {
   const randomIndex = Math.floor(Math.random() * ships.length);
   const randomShip = ships[randomIndex];
   randomShip.takeHit();
-  if (randomShip.hp <= 0 && randomShip.name === "MotherShip") {
+  if (randomShip.hp <= 0 && randomShip.name === "mother-ship") {
     endGame();
-    alert("You killed the mother ship, so all the other ship died.");
+    const myAlert = () => {
+      let x = document.getElementById("myAlert");
+      if (x.style.display == "none") {
+        x.style.display = "block";
+      } 
+    }
+    myAlert();
   } else if (randomShip.hp <= 0) {
     ships.splice(randomIndex, 1);
   }
@@ -71,5 +77,6 @@ const resetGame = () => {
 
 updateHtml();
 
-document.querySelector("#button").addEventListener("click", dealDamage);
+let fireButton = document.querySelector("#button");
+fireButton.addEventListener("click", dealDamage);
 document.querySelector("#buttonTwo").addEventListener("click", resetGame);
